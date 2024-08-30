@@ -90,7 +90,7 @@ layout: center
 </div>
 
 <div v-click>
-<uil-question-circle class="text-xl text-violet-400" /> Dejen la mano levantada los que usan <strong>ChatGPT</strong>... </div><div v-click>pero copian y pegan sin revisar...</div>
+<uil-question-circle class="text-xl text-violet-400" /> Dejen la mano levantada los que usan <strong>ChatGPT</strong>... </div><div v-click>pero copian y pegan sin revisar... 😂🤣</div>
 
 
 <div v-click>
@@ -121,7 +121,7 @@ layout: center
 
 <div v-click>
 <p>
-  ¡Es más del 80%! Hay más de <span v-mark.circle.green="4">3.5 mil millones de trabajadores</span> <strong>deskless</strong> en todo el mundo. 
+  ¡Es más del 80%! Hay más de <span v-mark.green="4">3.5 mil millones de trabajadores</span> <strong>deskless</strong> en todo el mundo. 
   <br>
   Sin embargo, solo el <span v-mark.circle.green="4">1%</span> del software está diseñado específicamente para ellos.
 </p>
@@ -185,6 +185,50 @@ Key Features:
 ---
 layout: center
 ---
+# Demo
+---
+class: px-2
+---
+# Componentes
+<div grid="~ cols-4 gap-4" m="t-2">
+  <div>
+  <div class="w-[200px] h-[200px] flex items-center justify-center">
+    <img src="/images/vllm-logo-text-dark.png" alt="vLLM Logo" class="max-w-full max-h-full object-contain">
+  </div>
+  <div class="w-[200px] h-[200px] flex items-center justify-center">
+    <img src="/images/whisper.webp" alt="Whisper Logo" class="max-w-full max-h-full object-contain">
+  </div>
+  Speech to Text (STT)
+  <br>
+  Voz a Texto
+  </div>
+  <div>
+  <div class="w-[200px] h-[200px] flex items-center justify-center">
+    <img src="/images/ollama.png" alt="Ollama Logo" class="max-w-full max-h-full object-contain">
+  </div>
+  <div class="w-[200px] h-[200px] flex items-center justify-center">
+    <video class="max-w-full max-h-full object-contain" autoplay muted loop playsinline>
+      <source src="/videos/Gemma_2_mp4_hero_square_tight.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  Large Language Model (LLM)
+  <br>
+  Modelo de Lenguaje Grande
+  </div>
+  <div>
+  Text to Speech (TTS)
+  <br>
+  Síntesis de Voz por Texto
+  </div>
+  <div>
+  Orquestacion
+  </div>
+</div>
+
+---
+layout: center
+---
 # Arquitectura: Orquestación multi-modelo
 ```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
 sequenceDiagram
@@ -220,11 +264,7 @@ sequenceDiagram
     U->>+AI: Envía audio
     AI-->>-U: Respuesta optimizada y contextual en tiempo real
 ```
----
-layout: center
----
-# Demo
----
+
 # What is Slidev?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
