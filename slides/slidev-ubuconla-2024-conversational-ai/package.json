@@ -8,9 +8,14 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@iconify-json/uil": "^1.1.9",
+    "@iconify-json/uim": "^1.1.10",
     "@slidev/cli": "^0.49.28",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "slidev-theme-dracula": "^0.2.0",
+    "slidev-theme-penguin": "^2.2.2",
+    "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.38"
   }
 }

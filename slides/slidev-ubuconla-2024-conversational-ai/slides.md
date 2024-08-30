@@ -1,16 +1,16 @@
 ---
 # You can also start simply with 'default'
-theme: seriph
+theme: dracula
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: /images/bg.svg
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Conversational AI on Ubuntu
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Conversational AI on Ubuntu
+  Local Implementation with Vocode.
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Learn more at [arpagon/ubuconla-2024-conversational-ai](https://github.com/arpagon/ubuconla-2024-conversational-ai)
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -22,9 +22,10 @@ transition: slide-left
 mdc: true
 ---
 
-# Welcome to Slidev
+# Conversational AI on Ubuntu
 
-Presentation slides for developers
+Local Implementation with Vocode.
+
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -32,11 +33,9 @@ Presentation slides for developers
   </span>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
+<div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center">
+  <img src="/images/ubuconla_2024_logo.svg" class="w-64" alt="UbuConLA 2024 Logo" />
+  <a href="https://github.com/arpagon/ubuconla-2024-conversational-ai" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
@@ -47,9 +46,65 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
+layout: image-left
+image: 'images/me_2023_ArtisanLabs_nologo.svg'
 ---
 
+# Sebastian Rojo
+
+<div class="flex flex-col space-y-4">
+  <div class="flex items-center">
+    <img src="/images/vocode_logo.svg" class="w-8 mr-4" alt="Vocode Logo" />
+    Former Open Source Engineer at Vocode, now Open Source Maintainer
+  </div>
+  <div class="flex items-center">
+    <img src="/images/artisanLogo.svg" class="w-8 mr-4" alt="ArtisanLabs Logo" />
+    Founder and CTO at ArtisanLabs
+  </div>
+  <div class="flex items-center">
+    <carbon-ai-status class="w-8 mr-4" />
+    Passionate about Real-Time Communication and Generative AI
+  </div>
+  <div class="flex items-center">
+    <carbon-logo-python class="w-8 mr-4" />
+    Active Contributor to the Python and Open Source Community
+  </div>
+  <div class="flex items-center">
+    <carbon-logo-linkedin class="w-8 mr-4" />
+    <a href="https://www.linkedin.com/in/arpagon/" target="_blank">linkedin.com/in/arpagon</a>
+  </div>
+  <div class="flex items-center">
+    <carbon-logo-x class="w-8 mr-4" />
+    <a href="https://x.com/arpagon" target="_blank">@arpagon</a>
+  </div>
+</div>
+
+---
+
+<div v-click>
+
+<uil-question-circle class="text-xl text-orange-400" /> ¿Quién está interesado en escuchar sobre **IA conversacional**?
+
+</div>
+
+<div v-click>
+<uil-question-circle class="text-xl text-orange-400" /> Dejen la mano levantada los que usan **ChatGPT**... </div><div v-click>pero copian y pegan sin revisar...</div>
+
+
+<div v-click>
+
+<uil-question-circle class="text-xl text-orange-400" /> ¿Quién conoce qué es **IA conversacional**?
+
+</div>
+
+<div v-click>
+
+<uil-question-circle class="text-xl text-orange-400" /> ¿Quién ha implementado alguna vez **inteligencia artificial**?
+
+</div>
+
+---
+---
 # What is Slidev?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
