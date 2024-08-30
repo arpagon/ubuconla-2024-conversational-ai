@@ -55,7 +55,7 @@ image: 'images/me_2023_ArtisanLabs_nologo.svg'
 <div class="flex flex-col space-y-4">
   <div class="flex items-center">
     <img src="/images/vocode_logo.svg" class="w-8 mr-4" alt="Vocode Logo" />
-    Former Open Source Engineer at Vocode, ahora Open Source Maintainer
+    Open Source Engineer at Vocode
   </div>
   <div class="flex items-center">
     <img src="/images/artisanLogo.svg" class="w-8 mr-4" alt="ArtisanLabs Logo" />
@@ -115,7 +115,7 @@ layout: center
 layout: center
 ---
 
-# Why is this important
+# Por qué es esto importante
 
 <uil-question-circle class="text-xl text-violet-400" /> ¿Cuántos trabajadores "deskless" hay en el mundo?
 
@@ -144,16 +144,30 @@ Key Point:
 These workers are the backbone of essential industries and are increasingly leveraging technology, including conversational AI, to enhance productivity and efficiency.
 -->
 ---
-layout: center
+layout: image-right
+image: 'images/qr_vocode_repo.svg'
+class: 'mt-1'
 ---
 
-# ¿Qué es Vocode?
+<div class="flex items-center justify-center">
+  <img src="/images/vocode_logo.svg" class="w-20 mr-4" alt="Vocode Logo" />
+  <h1 class="text-4xl font-bold">¿Qué es Vocode?</h1>
+</div>
 
-
-
-<div class="flex justify-center items-center space-x-4">
-  <img src="/images/vocode_logo.svg" class="w-20" alt="Vocode Logo" />
-  <img src="/images/Y_Combinator_logo.svg" class="w-20" alt="Y Combinator Logo" />
+<div class="mt-8 max-w-2xl mx-auto">
+  <div class="flex items-start mb-4">
+    <carbon-logo-github class="text-xl text-violet-400 mt-1 mr-2 flex-shrink-0" />
+      Es una librería modular y open source que facilita la creación de aplicaciones de voz 
+      basadas en modelos de lenguaje (LLM).    
+  </div>
+  <div class="flex items-start">
+    <img src="/images/Y_Combinator_logo.svg" class="w-5 h-5 mt-1 mr-2 flex-shrink-0" alt="Y Combinator Logo" />
+    Respaldado por Y Combinator, Google Ventures y otros inversores de renombre.
+  </div>
+  <div class="flex items-start mb-4">
+    <carbon-logo-github class="text-xl text-violet-400 mt-1 mr-2 flex-shrink-0" />
+    <a href="https://github.com/vocodedev/vocode-core">https://github.com/vocodedev/vocode-core</a>
+  </div>
 </div>
 
 <!--
@@ -168,6 +182,48 @@ Key Features:
 - Extensible & Flexible
 - Compatible with Local and Cloud Deployments
 -->
+---
+layout: center
+---
+# Arquitectura: Orquestación multi-modelo
+```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
+sequenceDiagram
+    participant U as Usuario
+    participant B as Backend
+    participant STT as Servicio STT
+    participant LLM as Modelo LLM
+    participant TTS as Servicio TTS
+
+    Note over U,TTS: La latencia depende de la ubicación geográfica de cada componente
+
+    U->>+B: Envía audio
+    B->>+STT: Envía audio para transcripción
+    STT-->>-B: Devuelve texto transcrito
+    B->>+LLM: Envía texto para procesamiento
+    LLM-->>-B: Devuelve respuesta generada
+    B->>+TTS: Envía texto para síntesis
+    TTS-->>-B: Devuelve audio sintetizado
+    B->>-U: Envía respuesta de audio
+
+    Note over U,TTS: Optimización: Usar protocolos de streaming para procesar datos en tiempo real
+```
+---
+layout: center
+---
+# Arquitectura: multimodal model (e2e)
+```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
+sequenceDiagram
+    participant U as Usuario
+    participant AI as Modelo Multimodal Input/Output de Voz
+
+    Note over U,AI: Interacción Natural, Tiempo Real, Respuesta Emocional
+    U->>+AI: Envía audio
+    AI-->>-U: Respuesta optimizada y contextual en tiempo real
+```
+---
+layout: center
+---
+# Demo
 ---
 # What is Slidev?
 
