@@ -22,14 +22,14 @@ transition: slide-left
 mdc: true
 ---
 
-# Conversational AI on Ubuntu
+# IA Conversacional en Ubuntu
 
-Local Implementation with Vocode.
+Implementación Local con Vocode.
 
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+    Presiona Espacio <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -55,19 +55,19 @@ image: 'images/me_2023_ArtisanLabs_nologo.svg'
 <div class="flex flex-col space-y-4">
   <div class="flex items-center">
     <img src="/images/vocode_logo.svg" class="w-8 mr-4" alt="Vocode Logo" />
-    Former Open Source Engineer at Vocode, now Open Source Maintainer
+    Former Open Source Engineer at Vocode, ahora Open Source Maintainer
   </div>
   <div class="flex items-center">
     <img src="/images/artisanLogo.svg" class="w-8 mr-4" alt="ArtisanLabs Logo" />
-    Founder and CTO at ArtisanLabs
+    Fundador y CTO de ArtisanLabs
   </div>
   <div class="flex items-center">
     <carbon-ai-status class="w-8 mr-4" />
-    Passionate about Real-Time Communication and Generative AI
+    Comunicación en Tiempo Real, Voice ML, ML locales y distribuidos.
   </div>
   <div class="flex items-center">
     <carbon-logo-python class="w-8 mr-4" />
-    Active Contributor to the Python and Open Source Community
+    Contribuidor Activo en la Comunidad Python y de Código Abierto
   </div>
   <div class="flex items-center">
     <carbon-logo-linkedin class="w-8 mr-4" />
@@ -80,30 +80,94 @@ image: 'images/me_2023_ArtisanLabs_nologo.svg'
 </div>
 
 ---
+layout: center
+---
 
 <div v-click>
 
-<uil-question-circle class="text-xl text-orange-400" /> ¿Quién está interesado en escuchar sobre **IA conversacional**?
+<uil-question-circle class="text-xl text-violet-400" /> ¿Quién está interesado en escuchar sobre **IA conversacional**?
 
 </div>
 
 <div v-click>
-<uil-question-circle class="text-xl text-orange-400" /> Dejen la mano levantada los que usan **ChatGPT**... </div><div v-click>pero copian y pegan sin revisar...</div>
+<uil-question-circle class="text-xl text-violet-400" /> Dejen la mano levantada los que usan <strong>ChatGPT</strong>... </div><div v-click>pero copian y pegan sin revisar...</div>
 
 
 <div v-click>
 
-<uil-question-circle class="text-xl text-orange-400" /> ¿Quién conoce qué es **IA conversacional**?
+<uil-question-circle class="text-xl text-violet-400" /> ¿Quién ha usado asistentes de voz como Siri, Alexa o Google Assistant?
 
 </div>
 
 <div v-click>
 
-<uil-question-circle class="text-xl text-orange-400" /> ¿Quién ha implementado alguna vez **inteligencia artificial**?
+<uil-question-circle class="text-xl text-violet-400" /> ¿Quién ha usado **IAs conversacionales**?
+
+</div>
+
+<div v-click>
+
+<uil-question-circle class="text-xl text-violet-400" /> ¿Quién ha implementado algo con **inteligencia artificial**?
 
 </div>
 
 ---
+layout: center
+---
+
+# Why is this important
+
+<uil-question-circle class="text-xl text-violet-400" /> ¿Cuántos trabajadores "deskless" hay en el mundo?
+
+<div v-click>
+<p>
+  ¡Es más del 80%! Hay más de <span v-mark.circle.green="4">3.5 mil millones de trabajadores</span> <strong>deskless</strong> en todo el mundo. 
+  <br>
+  Sin embargo, solo el <span v-mark.circle.green="4">1%</span> del software está diseñado específicamente para ellos.
+</p>
+</div>
+
+<!--
+Key Statistic:
+
+3.5 Billion Workers – Over 80% of the global workforce are "deskless," meaning they don't sit at a desk to perform their job. This includes blue-collar workers, field service workers, retail employees, healthcare staff, and more.
+Breakdown by Industry:
+
+Manufacturing: 20% of the global workforce
+Agriculture: 27% of the global workforce
+Retail & Hospitality: 16% of the global workforce
+Healthcare: 10% of the global workforce
+Construction: 7% of the global workforce
+Others: 20%
+Key Point:
+
+These workers are the backbone of essential industries and are increasingly leveraging technology, including conversational AI, to enhance productivity and efficiency.
+-->
+---
+layout: center
+---
+
+# ¿Qué es Vocode?
+
+
+
+<div class="flex justify-center items-center space-x-4">
+  <img src="/images/vocode_logo.svg" class="w-20" alt="Vocode Logo" />
+  <img src="/images/Y_Combinator_logo.svg" class="w-20" alt="Y Combinator Logo" />
+</div>
+
+<!--
+Description:
+
+Vocode es una poderosa librería open source diseñada para facilitar la creación de agentes conversacionales que pueden procesar voz en tiempo real.
+Ofrece herramientas para integrar modelos de lenguaje, conversión de texto a voz (TTS), y conversión de voz a texto (STT) en aplicaciones locales o en la nube.
+Ideal para desarrolladores que buscan implementar asistentes virtuales personalizados, chatbots de voz, y otras soluciones de IA conversacional.
+
+Key Features:
+- Real-Time Voice Processing
+- Extensible & Flexible
+- Compatible with Local and Cloud Deployments
+-->
 ---
 # What is Slidev?
 
@@ -171,7 +235,7 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 
 ---
 layout: two-cols
-layoutClass: gap-16
+layoutClass: gap-16ma
 ---
 
 # Table of contents
@@ -410,11 +474,11 @@ This shows up when you click the slide:
 
 The <span v-mark.red="3"><code>v-mark</code> directive</span>
 also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
+<span v-mark.circle.violet="4">inline marks</span>
 , powered by [Rough Notation](https://roughnotation.com/):
 
 ```html
-<span v-mark.underline.orange>inline markers</span>
+<span v-mark.underline.violet>inline markers</span>
 ```
 
 </v-click>
