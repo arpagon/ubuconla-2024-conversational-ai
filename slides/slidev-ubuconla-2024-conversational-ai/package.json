@@ -17,5 +17,8 @@
     "slidev-theme-penguin": "^2.2.2",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.38"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.46.1"
   }
 }

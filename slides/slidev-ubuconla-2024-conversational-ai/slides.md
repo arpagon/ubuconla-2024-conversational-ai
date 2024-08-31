@@ -284,47 +284,27 @@ sequenceDiagram
     Note over U,TTS: Optimización: Usar protocolos de streaming para procesar datos en tiempo real
 ```
 ---
-layout: image-right
-image: https://cover.sli.dev
+level: 1
 ---
 
 # Code
 
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
+```python
+async def main():
+    (
+        microphone_input,
+        speaker_output,
+    ) = create_streaming_microphone_input_and_speaker_output(
+        use_default_devices=False,
+    )
+    # config STT, LLM, TTS
+    await conversation.start()
+    print("Conversation started, press Ctrl+C to end")
+    signal.signal(signal.SIGINT, lambda _0, _1: asyncio.create_task(conversation.terminate()))
+    while conversation.is_active():
+        chunk = await microphone_input.get_audio()
+        conversation.receive_audio(chunk)
 ```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-[^1]: [Learn More](https://sli.dev/guide/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 <!--
 Notes can also sync with clicks
@@ -340,77 +320,51 @@ Notes can also sync with clicks
 level: 2
 ---
 
-# Shiki Magic Move
+# Configigure STT
 
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
+```python
+    conversation = StreamingConversation(
+        output_device=speaker_output,
+        transcriber=DeepgramTranscriber(
+            DeepgramTranscriberConfig.from_input_device(
+                microphone_input,
+                endpointing_config=PunctuationEndpointingConfig(),
+                api_key=settings.deepgram_api_key,
+            ),
+        ),
 ```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
 ---
-layout: center
+level: 2
+---
+
+# Configure LLM
+```python
+        agent=ChatGPTAgent(
+            ChatGPTAgentConfig(
+                openai_api_key=settings.openai_api_key,
+                initial_message=BaseMessage(text="What up"),
+                prompt_preamble="""The AI is having a pleasant conversation about life""",
+            )
+        ),
+
+```
+---
+level: 2
+---
+
+# Configure TTS
+```python
+        synthesizer=AzureSynthesizer(
+            AzureSynthesizerConfig.from_output_device(speaker_output),
+            azure_speech_key=settings.azure_speech_key,
+            azure_speech_region=settings.azure_speech_region,
+        ),
+    )
+```
+
+---
+layout: image-right
+image: https://cover.sli.dev
 ---
 # Arquitectura: multimodal model (e2e)
 ```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
