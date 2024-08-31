@@ -3082,7 +3082,7 @@ packages:
   name: vocode-quickstart
   version: 0.1.0
   path: .
-  sha256: b57747e0c94c005a82dd81be530e9974b015f0693414b1160363bbc48a83a059
+  sha256: 692a515da49684643f5ab05dea2d29f9139e845add919d4af65cafac105761e8
   requires_dist:
   - vocode
   requires_python: '>=3.11'

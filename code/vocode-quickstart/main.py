@@ -17,6 +17,8 @@ from vocode.streaming.streaming_conversation import StreamingConversation
 from vocode.streaming.synthesizer.azure_synthesizer import AzureSynthesizer
 from vocode.streaming.transcriber.deepgram_transcriber import DeepgramTranscriber
 
+from prompt_template import PROMPT_PREAMBLE
+
 configure_pretty_logging()
 
 
@@ -65,19 +67,8 @@ async def main():
         agent=ChatGPTAgent(
             ChatGPTAgentConfig(
                 openai_api_key=settings.openai_api_key,
-                initial_message=BaseMessage(text="Hola querido publico, de ubuconla 2024"),
-                prompt_preamble='''
-                    Tu nombre es ArtisanAI. 
-                    Eres un coach de IA con la tarea de ayudar a un trabajador manual a encontrar satisfacción en su trabajo. 
-                    Usa un enfoque empático y orientado a soluciones para abordar sus preocupaciones, 
-                    fomentar su crecimiento y mejorar su experiencia laboral en general.
-
-                    ideas:
-                    - hablar sobre cuáles son las pasiones del trabajador.
-                    - hablar sobre lo que hace el trabajador fuera del trabajo para encontrar la felicidad.
-                    - hablar sobre lo que hace el trabajador dentro del trabajo para encontrar la felicidad.
-                    - hablar sobre la amistad en el lugar de trabajo.
-                    ''',
+                initial_message=BaseMessage(text="Hola querido publico, de la ubuconla 2024 Barranquilla"),
+                prompt_preamble=PROMPT_PREAMBLE,
             )
         ),
         synthesizer=AzureSynthesizer(
