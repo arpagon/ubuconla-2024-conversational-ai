@@ -1,0 +1,25 @@
+[project]
+name = "vocode-quickstart"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [{name = "Sebastian Rojo", email = "arpagon@gmail.com"}]
+requires-python = ">= 3.11"
+dependencies = ["vocode"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+vocode-quickstart = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+openssl = "3.0.*"
+portaudio = ">=19.6.0,<19.7"
+ffmpeg = ">=7.0.2,<7.1"
