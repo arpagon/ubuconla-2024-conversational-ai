@@ -34,7 +34,7 @@ Implementación Local con Vocode.
 </div>
 
 <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center">
-  <img src="/images/ubuconla_2024_logo.svg" class="w-64" alt="UbuConLA 2024 Logo" />
+  
   <a href="https://github.com/arpagon/ubuconla-2024-conversational-ai" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
@@ -53,6 +53,10 @@ image: 'images/me_2023_ArtisanLabs_nologo.svg'
 # Sebastian Rojo
 
 <div class="flex flex-col space-y-4">
+  <div class="flex items-center">
+    <img src="/images/sapian_logo.png" class="w-8 mr-4" alt="Vocode Logo" />
+    Socio fundador de Sapian
+  </div>
   <div class="flex items-center">
     <img src="/images/vocode_logo.svg" class="w-8 mr-4" alt="Vocode Logo" />
     Open Source Engineer at Vocode

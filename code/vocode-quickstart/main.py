@@ -67,7 +67,7 @@ async def main():
         agent=ChatGPTAgent(
             ChatGPTAgentConfig(
                 openai_api_key=settings.openai_api_key,
-                initial_message=BaseMessage(text="Hola querido publico, de la ubuconla 2024 Barranquilla"),
+                initial_message=BaseMessage(text="Hola querido publico de Sapian, ¿en qué puedo ayudarte hoy?"),
                 prompt_preamble=PROMPT_PREAMBLE,
             )
         ),
